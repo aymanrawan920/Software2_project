@@ -439,6 +439,101 @@ footer .follow i:hover{
     color: #dd78e8;
     
 }
+/* Shop page*/
+
+
+#page-header{
+    background-image: url("../img/products/dress16.jpg");
+    height: 40vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 14px;
+}
+#page-header h2{
+    font-size: 70px;
+    font-weight: 700;
+    color: rgb(0, 70, 113);
+    
+}
+
+#page-header p{
+    font-size: 30px;
+    font-weight: 600;
+    color: rgb(77, 115, 133);
+}
+#pagination{
+    text-align: center;
+    padding: 30;
+}
+#pagination a{
+    text-decoration: none;
+    padding: 15px 20px;
+    background-color: #1e53b5;
+    color: #f3ddee;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 5px;
+
+}
+
+/*single product page*/
+
+#prodetails{
+    display: flex;
+    margin-top: 20px;
+}
+#prodetails .single-pro-image{
+    width: 40%;
+    margin-right: 50px;
+}
+.small-img-group{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+
+}
+.small-img-col{   
+    flex-basis:24%;
+    cursor: pointer;
+}
+#prodetails .single-pro-details{
+    width: 50%;
+    padding-top: 30px;
+}
+#prodetails .single-pro-details h4{
+    padding: 40px 0 20px 0;
+    padding-top: 30px;
+}
+#prodetails .single-pro-details h2{
+    font-size: 26px;
+}
+
+#prodetails .single-pro-details select{
+    display: block;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+
+#prodetails .single-pro-details input{
+    width: 50px;
+    height: 40px;
+    padding-left: 10px;
+    font-size: 17px;
+    margin-right: 10px;
+}
+#prodetails .single-pro-details input:focus{
+    outline: none;
+}
+#prodetails .single-pro-details button{
+    background-color: #053292;
+    color: #ffffff;
+}
+#prodetails .single-pro-details span{
+    line-height: 25px;
+}
 
 
 /* Contact Page */
