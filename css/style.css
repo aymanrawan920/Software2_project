@@ -553,6 +553,9 @@ align-items: flex-start;
     color: #42c5ec;
 
 }
+::placeholder{
+    font-size: 16px;
+}
 
 
 
