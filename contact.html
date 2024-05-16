@@ -83,17 +83,16 @@
 
 
 </section>
-<section id="form-details">
-    <form action="">
+<section id="form-details" >
+    <form action="" id="contactForm">
         <span>Leave A Massege</span>
         <h2>We love to hear from you</h2>
-        <input type="text" placeholder="Your name">
-          <input type="email" placeholder="E-mail">
-            <input type="text" placeholder="Subject">
-            <textarea name="" id="" cols="30" rows="10" placeholder="Your Massege"></textarea>
-            <button class="normal">Submit</button>
+        <input type="text" id="name" placeholder="Your name">
+          <input type="email" id="email" placeholder="E-mail">
+            <input type="text" id="Subject" placeholder="Subject">
+            <textarea name="" id="msgcontact" cols="30" rows="10" placeholder="Your Massege"></textarea>
+            <button class="normal" >Submit</button>
     </form>
-
 <div class="people">
     <div>
         <img src="img/people/afnoon.jpg" alt="">
@@ -193,6 +192,12 @@
             <img src="img/pay/pay.png" alt="">
         </div>
     </footer>
-    <script src="JS/script.js"></script>
+           
+    
+           <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+           <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"></script>
+
+    <script src="mail.js"></script>
+     <script src="JS/script.js"></script>
 </body>
 </html> 
