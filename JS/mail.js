@@ -6,45 +6,56 @@ const firebaseConfig = {
     storageBucket: "contactform-bdce2.appspot.com",
     messagingSenderId: "761387503603",
     appId: "1:761387503603:web:9889fc61e899a624604c86"
-};
-// initilize firebase
-firebase.initializeApp(firebaseConfig);
-// reference my database
-var contactFormDB = firebase.database().ref('contactForm');
-document.getElementById('contactForm').addEventListener('submit', submitForm);
-
-
-function submitForm(e) {
+  };
+  
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  
+  // Reference my database
+  var contactFormDB = firebase.database().ref('contactForm');
+  
+  document.getElementById('contactForm').addEventListener('submit', submitForm);
+  
+  function submitForm(e) {
     e.preventDefault();
+  
     var name = getElementval('name');
     var email = getElementval('email');
-    
     var subject = getElementval('Subject');
     var msgcontact = getElementval('msgcontact');
-
-saveMessages(name, email, subject, msgcontact);
-    /// enable alert
-    document.querySelector(".alert").style.display = "block"; /// الماسيدج تظهر لما اعمل ارسال
-    /// remove alert
-    setTimeout(() => {
-        document.querySelector(".alert").style.display = "none"// تختفى لما ما ابعتش ف الفورم 
-    }, 3000 /// هتختفى بعد ثلاث ثوانى
-    );
-    // عبارة عن فانكشن هتمسح الداتا اللى اتكتبت مرة عشان اكتب داتا تانيه 
-   document.getElementById("contactForm").reset();
-
-}
-const saveMessages = (name, email, subject, msgcontact) => {
+  
+    saveMessages(name, email, subject, msgcontact)
+      .then(() => {
+        // Clear form inputs after successful save
+        document.getElementById("contactForm").reset();
+  
+        // Show alert for success (optional)
+        document.querySelector(".alert").style.display = "block";
+        document.querySelector(".alert").textContent = "Message sent successfully!";  // Update message
+  
+        setTimeout(() => {
+          document.querySelector(".alert").style.display = "none";
+        }, 3000);
+      })
+      .catch((error) => {
+        // Handle errors (optional)
+        console.error("Error saving message:", error);
+        document.querySelector(".alert").style.display = "block";
+        document.querySelector(".alert").textContent = "Error sending message!";
+});
+  }
+  
+  const saveMessages = (name, email, subject, msgcontact) => {
     var newContactform = contactFormDB.push();
-    
-    newContactform.set({
-        name: name,
-        email: email,
-        subject: subject,
-        msgcontact: msgcontact,
+    return newContactform.set({
+      name: name,
+      email: email,
+      subject: subject,
+      msgcontact: msgcontact
     });
-};
-
-const getElementval = (id) => {
+  };
+  
+  const getElementval = (id) => {
     return document.getElementById(id).value;
-};
+  };
+  
